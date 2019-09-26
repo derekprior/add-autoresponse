@@ -1,0 +1,17 @@
+name: add-autoresponse
+description: Add an automatic response to new issues or pull requests.
+inputs:
+  respondableId:
+    description: The id of the issue or pull request
+    required: true
+  response:
+    description: The response to be left on the issue or pull request
+    required: true
+  author:
+    description: The username of the issue author
+    required: true
+  exemptedAuthors:
+    description: Array of exempt usernames
+runs:
+  using: 'node12'
+  main: 'index.js'
