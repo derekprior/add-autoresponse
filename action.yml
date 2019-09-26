@@ -1,5 +1,9 @@
 name: add-autoresponse
 description: Add an automatic response to new issues or pull requests.
+branding:
+  icon: message-circle
+  color: red
+
 inputs:
   respondableId:
     description: The id of the issue or pull request
@@ -12,6 +16,7 @@ inputs:
     required: true
   exemptedAuthors:
     description: Array of exempt usernames
+
 runs:
   using: 'node12'
   main: 'index.js'
