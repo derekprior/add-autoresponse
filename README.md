@@ -43,3 +43,29 @@ jobs:
         author: ${{ github.event.issue.user.login }}
         exemptedAuthors: "johnsmith, janedoe"
 ```
+
+This example adds a comment to successfully merged pull requests that aren't created
+by exempted authors.
+
+```yaml
+  
+name: Auto message on pr merge
+
+on:
+  pull_request_target:
+    types: [closed]
+
+jobs:
+  auto-response:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: derekprior/add-autoresponse@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        respondableId: ${{ github.event.pull_request.node_id }}
+        response: "Well Done !! Thank you @${{ github.event.pull_request.user.login }} for your contribution :)"
+        author: ${{ github.event.pull_request.user.login }}
+        exemptedAuthors: "johnsmith, janedoe"
+```
