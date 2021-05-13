@@ -44,8 +44,8 @@ jobs:
         exemptedAuthors: "johnsmith, janedoe"
 ```
 
-Another example workflow that adds a comment to the successfully merged pull requests 
-that aren't created by exempted authors.
+This example adds a comment to successfully merged pull requests that aren't created
+by exempted authors.
 
 ```yaml
   
